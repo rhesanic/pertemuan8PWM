@@ -19,10 +19,12 @@ limitations under the License.
 function logResult(result) {
   console.log(result);
 }
+//digunakan untuk menampilkan hasil log pada console browser yang digunakan
 
 function logError(error) {
   console.log('Looks like there was a problem:', error);
 }
+//digunakan untuk menampilkan error pada console browser yang digunakan
 
 function validateResponse(response) {
   if (!response.ok) {
@@ -30,18 +32,23 @@ function validateResponse(response) {
   }
   return response;
 }
+//digunakan untuk menampilkan hasil dari response, ketika response hasilnya tidak ok
+//maka ditampilan status errornya
 
 function readResponseAsJSON(response) {
   return response.json();
 }
+//digunakan untuk mengembalikan hasil dari response untuk file json yang digunakan
 
 function readResponseAsBlob(response) {
   return response.blob();
 }
+//digunakan untuk mengembalikan hasil dari response untuk blob
 
 function readResponseAsText(response) {
   return response.text();
 }
+//mengembalikan hasil dari response untuk hasil berupa text
 
 function	showImage(responseAsBlob)	{
 		var	container	=	document.getElementById('img-container');
@@ -78,7 +85,9 @@ function fetchJSON() {
 }
 const jsonButton = document.getElementById('json-btn');
 jsonButton.addEventListener('click', fetchJSON);
-
+//melakukan fetching pada file examples/animals.json, kemudian ke fungsi valisadi respon 
+//sebagai pengecekkan, dilanjutkan ke respon json lalu ditampilkan log resultnya. jika terjai 
+//maka akan ditampilkan pada log error
 
 // Fetch Image ----------
 
@@ -93,7 +102,9 @@ function fetchImage() {
 }
 const imgButton = document.getElementById('img-btn');
 imgButton.addEventListener('click', fetchImage);
-
+//digunakan untuk feching sebuah gambar, digunakan gambar pada examples/fetching.jpg,
+//kemudian masuk kebagian validasi respon dan membaca respon blob kemudian masuk ke
+//fungsi untuk menampilkan gambar
 
 // Fetch text ----------
 
@@ -108,7 +119,9 @@ function fetchText() {
 }
 const textButton = document.getElementById('text-btn');
 textButton.addEventListener('click', fetchText);
-
+//digunakan untuk melakukan fetching text, text ini berasal dari examples/words.txt
+//kemudian masuk kebagian validasi respon dan membaca respon blob kemudian masuk ke
+//fungsi untuk menampilkan text tersebut
 
 function fetchData() {
   // TODO
@@ -122,3 +135,6 @@ function fetchData() {
 }
 const dataButton = document.getElementById('data-btn');
 dataButton.addEventListener('click', fetchData);
+//digunakan untuk melakukan fetching json, text ini berasal dari examples/data.json
+//kemudian masuk kebagian validasi respon dan membaca respon blob kemudian masuk ke
+//fungsi untuk menampilkan data json tersebut
